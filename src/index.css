@@ -90,7 +90,15 @@ main {
  .cardloader {
   text-align: -webkit-center;
  }
+ .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+  gap: 10px; /* Adjust the gap between images */
+}
 
- .overlyStyle {
-  background: rgba(0, 0, 0, .5) !important;
- }
+.gallery-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+}
+

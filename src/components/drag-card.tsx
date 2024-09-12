@@ -104,7 +104,7 @@ const DregCard: React.FC<CardProps> = ({ src, title, id, index, type, moveImage 
                 <BounceLoader/>
               </div>
             )}
-            {src && loaded ? <img src={src} alt={title} /> : <></>}
+            {src && loaded ? <img src={src} alt={title} className="gallery-image"/> : <></>}
           </div>
         </PhotoView>
       </PhotoProvider>

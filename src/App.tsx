@@ -43,6 +43,7 @@ const App: React.FC = () => {
   
   return (
     <main>
+      <div className="image-gallery">
       {React.Children.toArray(
         images.map((image, index) => (
           <DregCard
@@ -55,6 +56,7 @@ const App: React.FC = () => {
           />
         ))
       )}
+      </div>
     </main>
   );
 };
