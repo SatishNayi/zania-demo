@@ -39,4 +39,9 @@ export const handlers = [
     http.get("/api/getGalary", () => {
         return HttpResponse.json(galleryList);
   }),
+  http.post("/api/reorderGalary", ({ request }) => {
+    const reOrderData = request ? request.text : "";
+    sessionStorage.setItem("galaryData",reOrderData?.toString());
+    return HttpResponse.json(reOrderData);
+}),
 ];

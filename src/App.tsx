@@ -1,5 +1,5 @@
 import React,{ useEffect, useState } from "react";
-import DregCard from "./components/DragCard"; 
+import DregCard from "./components/drag-card"; 
 
 type galleryList = {
   id: string;
@@ -13,25 +13,32 @@ const card: galleryList | (() => galleryList) = [];
 const App: React.FC = () => {
   const [images, setImages] = useState<galleryList>(card);
   const moveImage = React.useCallback((dragIndex: number, hoverIndex: number) => {
+    
     setImages((prevCards) => {
       const clonedCards = [...prevCards];
       const removedItem = clonedCards.splice(dragIndex, 1)[0];
 
       clonedCards.splice(hoverIndex, 0, removedItem);
+      sessionStorage.setItem("galaryData",JSON.stringify(clonedCards));
       return clonedCards;
     });
+   
   }, []);
   useEffect(() => {
-    fetch('/api/getGalary')
+    const OrderImages = sessionStorage.getItem("galaryData");
+    if(OrderImages) {
+      setImages(JSON.parse(OrderImages))
+    }  else{
+      fetch('/api/getGalary')
       .then((response) => response.json())
       .then((data) => {
-        debugger;
-        console.log(data);
         setImages(data);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
+    } 
+    
   }, []);
   
   return (
