@@ -31,7 +31,7 @@ const galleryList = [
       id: "5",
       img:
         "https://picsum.photos/id/222/1200/800"
-       , title : "Bill of lading2",
+       , title : "Bill of lading 2",
        type:"bill-of-lading-2"
     } 
   ];
