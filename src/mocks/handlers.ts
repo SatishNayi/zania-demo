@@ -30,9 +30,9 @@ const galleryList = [
     {
       id: "5",
       img:
-        "https://res.cloudinary.com/terieyenike/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1649443800/react%20dnd/_MG_9747_nk0tz2_c_scale_w_509.jpg"
-       , title : "Bank Draft 2",
-       type:"bank-draft-2"
+        "https://picsum.photos/id/222/1200/800"
+       , title : "Bill of lading2",
+       type:"bill-of-lading-2"
     } 
   ];
 export const handlers = [
